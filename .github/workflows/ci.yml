@@ -1,0 +1,18 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      name: Build and push
+      uses: docker/build-push-action@v4
+      with:
+        push: true
+        tags: |
+          xhudaman/node-pnpm:lts-alpine
+          xhudaman/node-pnpm:latest
