@@ -12,6 +12,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
+          github-token: ${{ secrets.BUILD_TOKEN }}
           push: true
           tags: |
             xhudaman/node-pnpm:lts-alpine
